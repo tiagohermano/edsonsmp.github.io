@@ -15,7 +15,7 @@ p::selection {
 
 
 :root {
-    --bg-primary: #f5f3f7;
+    --bg-primary: #f0f0f0;
     --bg-secondary: #1a1a1a;
     --bg-transparent: transparent;
     --text-primary: #000000;
@@ -30,13 +30,14 @@ p::selection {
                       radial-gradient(100% 100% at 42% 72%, #feffe0 35%, transparent),
                       #add5ff;
 
-    --bg-gradient-2: radial-gradient(circle,rgba(255, 255, 255, 1) 1%, rgba(225, 239, 255, 1) 53%, rgba(214, 246, 255, 1) 100%);;
+    --bg-gradient-2: radial-gradient(circle,rgba(255, 255, 255, 1) 1%, rgba(225, 239, 255, 1) 53%, rgba(214, 246, 255, 1) 100%);
 
-
+    /* Footer Background */
+    --bg-footer: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     background: var(--bg-primary);
     color: var(--text-primary);
     line-height: 1.6;
@@ -61,13 +62,12 @@ body {
     display: none;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 24px;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(24px);
+    padding: 24px 24px;
+    background: rgba(255, 255, 255, 0.496);
+    backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(24px);
     border-radius: 9999px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgb(255 255 255 / 40%);
 }
 
 .navbar-logo {
@@ -88,6 +88,9 @@ body {
     color: var(--text-primary);
     text-decoration: none;
     transition: opacity 0.2s ease;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    color:(var(--bg-secondary))
 }
 
 .navbar-link:hover {
@@ -98,12 +101,11 @@ body {
 .navbar-mobile {
     display: flex;
     flex-direction: column;
-    background: rgba(255, 255, 255, 0.8);
+    background-color: #ffffff3a;
     backdrop-filter: blur(24px);
+    border: 1px solid #ffffff;
     -webkit-backdrop-filter: blur(24px);
-    border-radius: 28px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-radius: 40px;
     overflow: hidden;
 }
 
@@ -112,6 +114,9 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 16px 20px;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    overflow: hidden;
 }
 
 .navbar-toggle {
@@ -167,6 +172,7 @@ body {
     padding: 12px 16px;
     font-size: 15px;
     color: var(--text-primary);
+    font-weight: 500;
     text-decoration: none;
     border-radius: 12px;
     transition: background-color 0.2s ease;
@@ -187,6 +193,19 @@ body {
     }
 }
 
+/* Stack Cards Effect */
+.main-content {
+    position: relative;
+    z-index: 10;
+    background-color: var(--bg-primary);
+    border-radius: 0 0 32px 32px;
+}
+
+.footer-spacer {
+    height: 50vh;
+    background-color: #131a16;
+}
+
 .container {
     max-width: 1400px;
     margin: 0 auto;
@@ -195,7 +214,7 @@ body {
 
 /* Hero Section */
 .hero {
-    min-height: 60vh;
+    min-height: 55vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -218,6 +237,7 @@ body {
     color: inherit;
     max-width: 600px;
     line-height: 1.7;
+    max-width: 57ch;
 }
 
 .link {
@@ -235,7 +255,7 @@ body {
 /* Selected Work Section */
 .selected-work {
     background-color: var(--bg-transparent);
-    padding: 100px 0;
+    padding: 60px 0;
     margin: 0 -80px;
 }
 
@@ -317,7 +337,7 @@ body {
 }
 
 .work-button:hover {
-    background-color: #8a9aff;
+    background-color: #ffef13;
     color: #000000;
     transform: translateY(-1px);
 }
@@ -342,7 +362,7 @@ body {
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s ease;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 .see-more-button:hover {
@@ -350,9 +370,16 @@ body {
     border-color: #a3a3a3;
 }
 
-/* Footer */
+/* Footer - Stack Cards Effect */
 .footer {
-    padding: 40px 40px 40px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    padding: 256px 80px 20px;
+    background: #131a16;
+    color: #ffffff;
 }
 
 .footer-grid {
@@ -366,7 +393,7 @@ body {
     font-size: 14px;
     font-weight: 500;
     margin-bottom: 24px;
-    color: var(--text-primary);
+    color: #ffffff;
 }
 
 .footer-brand {
@@ -377,6 +404,7 @@ body {
 
 .brand-name {
     line-height: 1.3;
+    color: #ffffff;
 }
 
 .footer-links {
@@ -397,9 +425,13 @@ body {
 }
 
 .footer-text {
-    color: var(--text-primary);
+    color: rgba(255, 255, 255, 0.8);
     font-size: 15px;
     line-height: 1.7;
+}
+
+.footer-text .link {
+    color: #ffffff;
 }
 
 /* Bottom Bar */
@@ -408,14 +440,14 @@ body {
     justify-content: space-between;
     align-items: center;
     padding-top: 40px;
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     flex-wrap: wrap;
     gap: 20px;
 }
 
 .copyright {
     font-size: 13px;
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .legal-links {
@@ -440,23 +472,21 @@ body {
 }
 
 .social-link {
-    width: 40px;
-    height: 40px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
-    background-color: var(--bg-secondary);
-    border: 1px solid var(--border-color);
+    background-color: rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--text-secondary);
+    color: #ffffff;
     transition: all 0.2s ease;
     text-decoration: none;
 }
 
 .social-link:hover {
-    background-color: var(--text-primary);
-    color: var(--bg-primary);
-    border-color: var(--accent);
+    background-color: #ffef13;
+    color: #1a1a1a;
 }
 
 /* Responsive Design */
@@ -534,6 +564,14 @@ body {
         justify-self: start;
     }
 
+    .footer {
+      padding: 80px 24px 40px;
+    }
+
+    .footer-spacer {
+        height: 80vh;
+    }
+
     .footer-grid {
         grid-template-columns: 1fr;
         gap: 32px;
@@ -562,6 +600,7 @@ body {
 
     .selected-work {
         margin: 0 -20px;
+        padding-bottom: 86px;
     }
 
     .work-header,

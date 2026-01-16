@@ -1,8 +1,13 @@
 /* Case Study Styles */
 
+/* Base typography */
+body {
+  font-family: -apple-system,system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
 /* Color selection */
 p::selection {
-  background: #ea5757;
+  background: #92c1f6ea;
   color: #000000;
 }
 
@@ -70,7 +75,7 @@ p::selection {
 
 /* Hero Section */
 .case-hero {
-    padding: 180px 0 80px;
+    padding: 80px 0 40px;
 }
 
 .case-meta {
@@ -110,11 +115,11 @@ p::selection {
 
 /* Sections */
 .case-section {
-    padding: 100px 0;
+    padding: 100px 0px 20px;
 }
 
 .case-section-gray {
-    background-color: #fafafa;
+    background-color: #fcfdfe;
 }
 
 .case-section-title {
@@ -146,23 +151,54 @@ p::selection {
 .case-card {
     background-color: #ffffff;
     padding: 40px;
-    border-radius: 8px;
+    border-radius: 30px;
     border: none;
-    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.06),
-                0px 1px 2px -1px rgba(0, 0, 0, 0.06),
-                0px 2px 4px 0px rgba(0, 0, 0, 0.04);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.case-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.08),
-                0px 1px 2px -1px rgba(0, 0, 0, 0.08),
-                0px 2px 4px 0px rgba(0, 0, 0, 0.06);
 }
 
 .case-section-gray .case-card {
-    background-color: #ffffff;
+    background-color: #fcfdfe;
+}
+
+/* Card Images */
+.case-card-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: block;
+    object-fit: cover;
+}
+
+/* Detail Images - Large format in grid */
+.case-image-wrapper {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.case-detail-image {
+    width: 420px;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.case-detail-image:hover {
+    transform: scale(1.00);
+}
+
+.case-image-caption {
+    font-size: 14px;
+    color: #737373;
+    text-align: center;
+    margin-top: 12px;
+    line-height: 1.5;
 }
 
 .case-card-title {
@@ -244,6 +280,7 @@ p::selection {
     border-radius: 12px;
     color: #1a1a1a;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #f7f9ff;
 }
 
 .testimonial-card-medium {
@@ -251,6 +288,7 @@ p::selection {
     padding: 40px;
     border-radius: 12px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #e7e7e7;
 }
 
 .testimonial-card-large:hover,
@@ -261,14 +299,6 @@ p::selection {
                 0px 2px 4px 0px rgba(0, 0, 0, 0.06);
 }
 
-/* Gradient Backgrounds */
-.testimonial-gradient-blue {
-   background: linear-gradient(135deg, #f2f2fb 0%, #f7fbff 100%);
-}
-
-.testimonial-gradient-pink {
-    background: linear-gradient(135deg, #fdfdfd 0%, #ecfaff 100%);
-}
 
 /* Testimonial Content */
 .testimonial-company {
@@ -370,7 +400,7 @@ p::selection {
 
 /* Images */
 .case-image-section {
-    padding: 20px 0;
+    padding: 20px 0;;
     background-color: #ffffff;
 }
 
@@ -378,11 +408,12 @@ p::selection {
     width: 100%;
     height: auto;
     border-radius: 12px;
+    padding: 80px 0;
 }
 
 /* Companies Section */
 .case-companies {
-    padding: 20px 0;
+    padding: 0 0 80px;
     background-color: #ffffff;
     text-align: center;
     overflow: hidden;
@@ -463,9 +494,15 @@ p::selection {
     color: #737373;
 }
 
+/* Back Navigation Section */
+.case-back-nav {
+    padding: 60px 0;
+    text-align: center;
+}
+
 /* CTA Section */
 .case-cta {
-    background-color: #1a1a1a;
+    background-color: #131a16;
     padding: 100px 0;
     text-align: center;
 }
@@ -487,19 +524,20 @@ p::selection {
 
 .case-cta-button {
     display: inline-block;
-    padding: 14px 40px;
+    padding: 10px 24px;
     background-color: #ffffff;
     color: #1a1a1a;
     text-decoration: none;
-    border-radius: 28px;
-    font-size: 15px;
+    border-radius: 24px;
+    font-size: 14px;
     font-weight: 500;
     transition: all 0.2s ease;
 }
 
 .case-cta-button:hover {
-    background-color: #f5f5f5;
-    transform: translateY(-2px);
+    background-color: #ffef13;
+    color: #000000;
+    transform: translateY(-1px);
 }
 
 /* Footer */
@@ -533,10 +571,34 @@ p::selection {
         padding: 0 40px;
     }
 
-    .case-grid-2,
-    .case-grid-3 {
+    .case-grid-2 {
         grid-template-columns: 1fr;
         gap: 32px;
+    }
+
+    .case-grid-3.case-carousel {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 16px;
+        padding-bottom: 16px;
+        margin: 0 -40px;
+        padding-left: 40px;
+        padding-right: 40px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .case-grid-3.case-carousel::-webkit-scrollbar {
+        display: none;
+    }
+
+    .case-grid-3.case-carousel {
+        scrollbar-width: none;
+    }
+
+    .case-grid-3.case-carousel .case-card {
+        flex: 0 0 85%;
+        scroll-snap-align: start;
     }
 
     .results-grid {
@@ -566,7 +628,7 @@ p::selection {
     }
 
     .case-hero {
-        padding: 100px 0 60px;
+        padding: 80px 0 60px;
     }
 
     .case-section,
@@ -591,6 +653,16 @@ p::selection {
     .case-card,
     .case-metric-card {
         padding: 28px;
+    }
+
+    .case-grid-3.case-carousel {
+        margin: 0 -24px;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .case-grid-3.case-carousel .case-card {
+        flex: 0 0 90%;
     }
 
     .case-metric-value,

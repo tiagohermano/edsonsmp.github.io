@@ -1,0 +1,28 @@
+# Vídeos
+*.mov
+*.mp4
+
+# Imagens/GIFs não utilizados no projeto
+placeholder.webp
+second-image.png
+case-page-layout.png
+cursor-default.svg
+cursor-pointer.svg
+townsq-*.webp
+townsq-logo-1.webp
+Frame1.png
+Frame2.png
+Frame3.png
+Primeiros-rascunhos-com-feedbacks.png
+Selecao-de-PDVs.png
+UI-EM-USO.gif
+UI.gif
+UI-GIF_ACESSIBILIDADE.gif
+
+# Sistema
+.DS_Store
+*.swp
+*~
+
+# Planos Claude
+.claude/
